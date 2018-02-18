@@ -141,7 +141,7 @@ class CSVDiff
         ignore_fields = options.fetch(:ignore_fields, [])
         ignore_fields = [ignore_fields] unless ignore_fields.is_a?(Array)
         ignore_fields.map! do |f|
-            (f.is_a?(Fixnum) ? right_fields[f] : f).upcase
+            (f.is_a?(Integer) ? right_fields[f] : f).upcase
         end
         diff_fields = []
         if options[:diff_common_fields_only]
